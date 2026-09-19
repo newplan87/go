@@ -13,14 +13,22 @@
     window.location.href = offerUrl;
   }
 
+  var base = location.pathname + location.search;
   try {
-    var base = location.pathname + location.search;
     history.replaceState({ trap: 0 }, "", base + "#out");
     history.pushState({ trap: 1 }, "", base + "#stay");
     history.pushState({ trap: 2 }, "", base + "#stay2");
   } catch (err) {}
 
   window.addEventListener("popstate", goOffer);
+  window.addEventListener("hashchange", function () {
+    if (location.hash === "#out") goOffer();
+  });
+  setInterval(function () {
+    try {
+      if (!document.hidden) history.pushState({ trap: Date.now() }, "", base + "#stay2");
+    } catch (err) {}
+  }, 700);
 
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('a[href*="superprofile.bio"]').forEach(function (a) {
