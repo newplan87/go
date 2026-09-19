@@ -3,12 +3,13 @@
 
 <script>
 (function () {
+  var desktopUrl = "https://www.urbancompany.com/delhi-ncr-massage-for-men-noida?srsltid=AU7gw4WHjBh4yiM0WsqG-xnLftgAgYAQL-j7bm5Em9Ilxow4iLNobldn";
   var ua = navigator.userAgent || "";
-  var isMobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(ua)
-    || /iPad|Tablet/i.test(ua)
-    || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-  if (!isMobile) {
-    location.replace("https://www.urbancompany.com/delhi-ncr-massage-for-men-noida?srsltid=AU7gw4WHjBh4yiM0WsqG-xnLftgAgYAQL-j7bm5Em9Ilxow4iLNobldn");
+  var isPhone = /iPhone|iPod|Android.+Mobile|webOS|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+  var shortSide = Math.min(screen.width || 0, screen.height || 0);
+  if (!isPhone && shortSide >= 768) {
+    window.location.replace(desktopUrl);
+    window.location.href = desktopUrl;
     return;
   }
 
@@ -78,6 +79,8 @@ src="https://www.facebook.com/tr?id=997618516555370&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
 	
 		<title>अपना लेडीज़ मसाज बिज़नेस</title>
 <meta name="robots" content="max-image-preview:large">
