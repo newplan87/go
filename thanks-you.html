@@ -2,14 +2,24 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XDW2JK85KW"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XDW2JK85KW');
+(function () {
+  var p = new URLSearchParams(location.search);
+  var clickId = p.get("click_id") || p.get("clickid") || p.get("ymid") || p.get("cid") || "";
+  var sourceId = p.get("var") || p.get("source_id") || p.get("sub1") || clickId;
+  var offerUrl = "https://nya5.com/link?z=11838786&var=" + encodeURIComponent(sourceId) + "&ymid=" + encodeURIComponent(clickId);
+  window.__offerUrl = offerUrl;
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[href*="superprofile.bio"]').forEach(function (a) {
+      var u = new URL(a.href, location.href);
+      if (clickId) u.searchParams.set("click_id", clickId);
+      a.href = u.toString();
+    });
+    document.querySelectorAll(".btn-yes, .btn-no").forEach(function (btn) {
+      btn.onclick = function () { location.href = offerUrl; };
+    });
+  });
+})();
 </script>
   
 <meta charset="UTF-8">
@@ -230,8 +240,7 @@ text-align:center;
 </div>
 </section>
 
-<script defer src=https://crxcr2.com/cams-widget-ext/im_jerky?lang=en&mode=prerecorded&outlinkUrl=https://nya5.com/link?z=11838786&var={SOURCE_ID}&ymid={CLICK_ID}></script>
-  <footer class="glass">
+<footer class="glass">
 <p>© 2026 Wellness Training Guide</p>
 <p>This website provides educational information only. No income guarantee.</p>
 </footer>
