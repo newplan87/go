@@ -34,6 +34,7 @@
     document.querySelectorAll('a[href*="superprofile.bio"]').forEach(function (a) {
       var u = new URL(a.href, location.href);
       if (clickId) u.searchParams.set("click_id", clickId);
+      u.searchParams.set("redirect", "https://newplan87.github.io/go/thanks-you.html?paid=1");
       a.href = u.toString();
       a.addEventListener("click", function () {
         if (window.fbq) fbq("track", "InitiateCheckout", { value: 199, currency: "INR" });
